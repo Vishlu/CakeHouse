@@ -1,0 +1,270 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %} Cake {% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'cake/css/cake_style.css' %}"> {% endblock style %}
+{% block style2 %}
+<link rel="stylesheet" href="{% static 'cake/css/model_style.css' %}"> {% endblock style2 %}
+{% block cake %}
+<center>
+
+
+  <h1 style="font-family:Georgia, 'Times New Roman', Times, serif;">Sweet Cakes</h1>
+  <br>
+
+  <div class="w3-content w3-section" style="max-width:400px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);">
+    <img class="cake" src="{% static 'cake/image/pin.png' %}" alt="pinapple" style="width:100%; border-radius:25px;">
+    <img class="cake" src="{% static 'cake/image/venila.jpg' %}" alt="venila" style="width:100%; border-radius:25px;">
+    <img class="cake" src="{% static 'cake/image/three.jpg' %}" alt="blackberry"
+      style="width:100%; border-radius:25px;">
+    <img class="cake" src="{% static 'cake/image/gift.jpg' %}" alt="darkberry" style="width:100%; border-radius:25px;">
+    <img class="cake" src="{% static 'cake/image/tower.jpg' %}" alt="darkberrymountain"
+      style="width:100%; border-radius:25px;">
+    <img class="cake" src="{% static 'cake/image/ice.jpg' %}" alt="ice-cream" style="width:100%; border-radius:25px;">
+    <img class="cake" src="{% static 'cake/image/straw.jpg' %}" alt="straw-berry"
+      style="width:100%; border-radius:25px;">
+    <img class="cake" src="{% static 'cake/image/dark.jpg' %}" alt="dark straw-berry"
+      style="width:100%; border-radius:25px;">
+    <img class="cake" src="{% static 'cake/image/ch.jpg' %}" alt="white berry" style="width:100%; border-radius:25px;">
+  </div>
+
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("cake");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+  </script>
+
+  <br><br><br><br><br><br>
+  <h3>There is a some <strong>special Cake</strong> for a Buyers.</h3>
+  <h4>Please Order now..</h4>
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img id="myimg" class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/pin.png' %}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Venila Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" href="{% static 'cake/image/pin.png' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 399</a>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+                </div>
+                <script>
+                  // Get the modal
+                  var modal = document.getElementById("myModal");
+
+                  // Get the image and insert it inside the modal - use its "alt" text as a caption
+                  var img = document.getElementById("myimg");
+                  var modalImg = document.getElementById("img01");
+                  var captionText = document.getElementById("caption");
+                  img.onclick = function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                  }
+
+                  // Get the <span> element that closes the modal
+                  var span = document.getElementsByClassName("close")[0];
+
+                  // When the user clicks on <span> (x), close the modal
+                  span.onclick = function () {
+                    modal.style.display = "none";
+                  }
+                </script>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img title="Pineapple" class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/venila.jpg' %}" preserveAspectRatio="xMidYMid slice" focusable="false"
+              role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">White Milk Straw-berry Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary"
+                  href="{% static 'cake/image/venila.jpg' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 349</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/three.jpg' %}" preserveAspectRatio="xMidYMid slice" focusable="false"
+              role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Dark Three-Layer Chocolate Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" href="{% static 'cake/image/three.jpg' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 1099</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/gift.jpg' %}" preserveAspectRatio="xMidYMid slice" focusable="false"
+              role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Dark Two-Layer Chocolate Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" href="{% static 'cake/image/gift.jpg' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 999</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/tower.jpg' %}" preserveAspectRatio="xMidYMid slice" focusable="false"
+              role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Dark Five-Layer Chocolate Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" href="{% static 'cake/image/tower.jpg' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 1699</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/ice.jpg' %}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Dark Two-Layer ice-cream Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" href="{% static 'cake/image/ice.jpg' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 299</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/straw.jpg' %}" preserveAspectRatio="xMidYMid slice" focusable="false"
+              role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Pink Straw-berry Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" href="{% static 'cake/image/straw.jpg' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 649</a>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/dark.jpg' %}" preserveAspectRatio="xMidYMid slice" focusable="false"
+              role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">White Straw-berry Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" href="{% static 'cake/image/dark.jpg' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 749</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="{% static 'cake/image/ch.jpg' %}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+            <rect width="100%" height="100%" fill="#55595c" /><br>
+            <text style="font-family:Georgia, 'Times New Roman', Times, serif;" x="50%" y="50%" fill="#eceeef"
+              dy=".3em">Dark Straw-berry Chocolate Cake</text>
+            <br><br>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a type="button" class="btn btn-primary" href="{% static 'cake/image/ch.jpg' %}">View</a>&nbsp;&nbsp;
+                <a type="button" class="btn btn-success" href="{% url 'order' %}">₹ 549</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</center>
+
+{% endblock cake %}

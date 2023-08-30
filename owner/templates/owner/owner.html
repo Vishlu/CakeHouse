@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %} Author {% endblock title %}
+{% block style %} <link rel="stylesheet" href="{% static 'owner/css/style.css' %}"> {% endblock style %}
+{% block author %}
+&nbsp;&nbsp;
+
+
+      <div class="card">
+        <div class="card-header">
+          Owner Profile
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <img style="border-radius: 15px;" class="square" src="{% static 'owner/image/college.jpg' %}" width="200" height="200"><br><br>
+            <p>Name : Diksha Santosh Salk</p>
+            <p>Location : Kandivali</p>
+            <p>BCS : Mithibai college</p>
+            <p>Work-Address : M.K High School Compound, Factory Ln, Gautam Nagar, Borivali, Mumbai, Maharashtra 400092</p>
+            <footer class="blockquote-footer">Diksha Salk<cite title="Source Title"></cite></footer>
+          </blockquote>
+        </div>
+      </div>
+<br><br>
+
+    <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'owner/image/friends.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Friendship-Forever</h5>
+            <p class="card-text"></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"></small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'owner/image/group.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Independence-Day Celebration</h5>
+            <p class="card-text"></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"></small>
+          </div>
+        </div>
+      </div>
+
+
+
+</center>
+{% endblock author %}

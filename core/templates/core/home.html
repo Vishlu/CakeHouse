@@ -1,0 +1,81 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %} HOME {% endblock title %}
+{% block home %} 
+
+        <center>
+        <div class="w3-content" style="max-width:500px;">
+            <img class="mySlides" src="{% static 'core/image/demo4.jpg' %}" style="width:100%; display:none; border-radius: 25px;">
+            <img class="mySlides" src="{% static 'core/image/demo.jpg' %}" style="width:100%; display:none; border-radius: 25px;">
+            <img class="mySlides" src="{% static 'core/image/demo3.jpg' %}" style="width:100%; border-radius: 25px;">
+
+            <div class="w3-row-padding w3-section">
+
+              <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="{% static 'core/image/demo4.jpg' %}" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+              </div>
+
+              <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="{% static 'core/image/demo.jpg' %}" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+              </div>
+
+              <div class="w3-col s4">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="{% static 'core/image/demo3.jpg' %}" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+              </div>      
+          </div>
+          </div>
+          <script>
+          function currentDiv(n) {
+            showDivs(slideIndex = n);
+          }
+            
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+          }
+          x[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " w3-opacity-off";
+          }
+          </script>
+</center>   
+   
+<br><br>
+        <center>
+          <div class="card text-center">
+            <div class="card-header">
+              Cake Info
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" >Cranberry coffee cake</h5>
+              <p class="card-text">
+                A fudge cake is a type of chocolate cake
+                Cakes are broadly divided into several categories, based primarily on ingredients and mixing techniques.
+                
+                Although clear examples of the difference between cake and bread are easy to find, the precise classification has always been elusive. For example, banana bread may be properly considered either a quick bread or a cake.
+                
+                Butter cakes are made from creamed butter, sugar, eggs, and flour. They rely on the combination of butter and sugar beaten for an extended time to incorporate air into the batter. A classic pound cake is made with a pound each of butter, sugar, eggs, and flour. Baking powder is in many butter cakes, such as Victoria sponge. The ingredients are sometimes mixed without creaming the butter, using recipes for simple and quick cakes.
+                Sponge cakes (or foam cakes) are made from whipped eggs, sugar, and flour. They rely primarily on trapped air in a protein matrix (generally of beaten eggs) to provide leavening, sometimes with a bit of baking powder or other chemical leaven added as insurance. Sponge cakes are thought to be the oldest cakes made without yeast. An angel food cake is a white sponge cake that uses only the whites of the eggs and is traditionally baked in a tube pan. The French Génoise is a sponge cake that includes clarified butter. Highly decorated sponge cakes with lavish toppings are sometimes called gateau, the French word for cake.
+                Chiffon cakes are sponge cakes with vegetable oil, which adds moistness.
+                Chocolate cakes are butter cakes, sponge cakes, or other cakes flavored with melted chocolate or cocoa powder. German chocolate cake is a variety of chocolate cake. Fudge cakes are chocolate cakes that contain fudge.
+                Coffee cake is generally thought of as a cake to serve with coffee or tea at breakfast or a coffee break. Some types use yeast as a leavening agent while others use baking soda or baking powder. These cakes often have a crumb topping called streusel or a light glaze drizzle.
+                Baked flourless cakes include baked cheesecakes and flourless chocolate cakes. Cheesecakes, despite their name, aren't cakes at all. Cheesecakes are custard pies, with a filling made mostly of some form of cheese (often cream cheese, mascarpone, ricotta, or the like), and have very little flour added, although a flour-based or graham cracker crust may be used. Cheesecakes are also very old, with evidence of honey-sweetened cakes dating back to ancient Greece.
+                Butter or oil layer cakes include most of the traditional cakes used as birthday cakes, etc., and those sold as packaged cakes. Baking powder or bicarbonate of soda is used to provide both lift and a moist texture. Many flavorings and ingredients may be added; examples include devil's food cake, carrot cake, and banana bread.
+                Yeast cakes are the oldest and are very similar to yeast bread. Such cakes are often very traditional in form and include such pastries as babka and stollen.
+                Some varieties of cake are widely available in the form of cake mixes, wherein some of the ingredients (usually flour, sugar, flavoring, baking powder, and sometimes some form of fat) are premixed, and the cook needs add only a few extra ingredients, usually eggs, water, and sometimes vegetable oil or butter. While the diversity of represented styles is limited, cake mixes do provide an easy and readily available homemade option for cooks who are not accomplished bakers.
+                
+                <p>
+            </div>
+          </div>
+
+        </center>
+ 
+
+{% endblock home %}

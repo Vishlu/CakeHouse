@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/w3_style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="{% static 'core/js/w3.js' %}"></script>
+  {% block style %} {% endblock style %}
+  {% block style2 %} {% endblock style2 %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+  <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'core/js/jquery.js' %}"></script>
+  <script src="{% static 'core/js/poper.js' %}"></script>
+
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom box-shadow">
+    <h5 style="font-family: Georgia, serif; font-size: 40px; color:green; text-shadow: 2px 2px 6px #cccccc;"
+      class="my-0 mr-md-auto font-weight-normal">CakeHouse</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="{% url 'home' %}">HOME</a>
+      <a class="p-2 text-dark" href="{% url 'author' %}">Outhor</a>
+      <a class="p-2 text-dark" href="{% url 'about' %}">About</a>
+      <a class="p-2 text-dark" href="{% url 'cake' %}">Cake</a>
+      <a class="p-2 text-dark btn btn-outline-primary" href="{% url 'order' %}">Order</a>
+    </nav>
+  </div>
+  {% block home %} {% endblock home %}
+
+  {% block author %} {% endblock author %}
+
+  {% block about %} {% endblock about %}
+
+  {% block gallary %} {% endblock gallary %}
+
+  {% block cake %} {% endblock cake %}
+
+  {% block order %} {% endblock order %}
+
+  {% block login %} {% endblock login %}
+  <br><br><br>
+  {% block down %}
+
+  <hr class="featurette-divider">
+
+  <footer class="container py-5">
+    <div class="row">
+
+      <div class="col-6 col-md">
+        <h5 strong class="d-inline-block mb-2 text-primary">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location</strong></h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <p class="text-muted">Some Where Kandivali <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Borivali</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md">
+        <h5><strong class="d-inline-block mb-2 text-success">CakeHouse No.</strong></h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <p class="text-muted">Shop-Contact No. : <br></p>022 5320 2898
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md">
+        <h5>Arround the Web</h5>
+        <ul class="list-unstyled text-small">
+          <li>&nbsp;&nbsp;
+            <a class="text-muted" href="#"></a><i style="font-size: 30px; color: #3b5998;" class="fa fa-facebook-square"
+              aria-hidden="true"></i>&nbsp;&nbsp;
+            <a class="text-muted" href="#"></a><i style="font-size: 30px; color: #0099ff;" class="fa fa-twitter-square"
+              aria-hidden="true"></i>&nbsp;&nbsp;
+            <a class="text-muted" href="#"></a><i style="font-size: 30px; color: #dd2a7b;" class="fa fa-instagram"
+              aria-hidden="true"></i>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md">
+        <h5>Information</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="{% url 'about' %}">About</a></li>
+          <li><a class="text-muted" href="{% url 'author' %}">Author</a></li>
+          <li><a class="text-muted" href="{% url 'order' %}">Order</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+    <center>
+      <p class="text-muted">a Vishal Prajapati production</p>
+      <p class="text-muted">&copy; CakeHouse 2020</p>
+    </center>
+  </footer>
+
+  {% endblock down %}
+</body>
+</html>

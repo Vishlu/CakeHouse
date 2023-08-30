@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %} About {% endblock title %}
+
+{% block about %}
+
+<center>
+    <div class="card text-center">
+      <div class="card-header">
+        Something About CakeHouse
+      </div>
+      <div class="card-body">
+        <img style="border-radius: 15px;" class="square" src="{% static 'about/image/demo2.jpg' %}" width="400" height="200">
+        <br><br>
+        <h5 class="card-title" >Special-purpose cakes</h5>
+        <p class="card-text">
+
+            Cake made for a baby shower with edible decorations, an example of edible art
+            Cakes may be classified according to the occasion for which they are intended. For example, wedding cakes, birthday cakes, cakes for first communion, Christmas cakes, Halloween cakes, and Passover plava (a type of sponge cake sometimes made with matzo meal) are all identified primarily according to the celebration they are intended to accompany. The cutting of a wedding cake constitutes a social ceremony in some cultures. The Ancient Roman marriage ritual of confarreatio originated in the sharing of a cake.
+            
+            Particular types of cake may be associated with particular festivals, such as stollen or chocolate log (at Christmas), babka and simnel cake (at Easter), or mooncake. There has been a long tradition of decorating an iced cake at Christmas time; other cakes associated with Christmas include chocolate log and mince pies.
+            
+            A Lancashire Courting Cake is a fruit-filled cake baked by a fiancée for her betrothed. The cake has been described as "somewhere between a firm sponge – with a greater proportion of flour to fat and eggs than a Victoria sponge cake – and a shortbread base and was proof of the bride-to-be's baking skills". Traditionally it is a two-layer cake filled and topped with strawberries or raspberries and whipped cream.
+          <p>
+      </div>
+    </div>
+
+  </center>
+
+  {% endblock about %}
